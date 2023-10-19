@@ -1,0 +1,366 @@
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage[letterpaper,portrait]{geometry}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{lipsum}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{csquotes}
+\usepackage[spanish]{babel}
+\usepackage{apacite}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+\usepackage{tocloft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{letterpaper, margin=2.54cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Gustavo Vergara}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\pgfplotsset{compat=1.18}
+\setstretch{2}
+
+\begin{titlepage}
+    \centering
+    \vspace{2.5cm}
+    {\scshape \Large Elaboración de historias de usuario del proyecto - GA2-220501093-AA1-EV03 \par}
+    \vspace{5cm}
+    \textbf\large\scshape{\par}
+         \vspace{0.5cm}
+         
+    {\Large Vergara Pareja Gustavo\par}
+    \vspace{5cm}
+    {\scshape\Large Jovanna Herazo Daza\par}
+    \vspace{0.3cm}
+    {\scshape\Large Tecnología en Análisis y Desarrollo de Software \par}
+    \vspace{0.3cm}
+    {\scshape\Large SENA - Centro Agropecuario Regional Cauca\par}
+    \vspace{0.3cm}
+    {\Large \today \par}
+    \end{titlepage}
+
+\begin{flushleft}
+    \large \textbf{EVIDENCIA A SOLUCIONAR}\\
+    \vspace{0.1cm}
+    \section*{Elaboración de historias de usuario del proyecto. GA2-220501093-AA1-EV03}
+    
+    Ahora, es momento de elaborar las historias de uso del proyecto, de acuerdo con los procesos ya elaborados, y por este motivo, se deben tener en cuenta los siguientes aspectos:
+    \vspace{0.3cm}
+    \newline Se deben seguir las normas básicas de presentación de un documento escrito; es decir, el documento debe tener como mínimo una portada, introducción, alcance, lista de requerimientos y versión del documento. Los requerimientos serán redactados usando el modelo IEEE830 y también el modelo de descripción de requisitos por medio de historias de usuario.
+    \newline Respecto a lista de requerimientos, el aprendiz deberá agregar una sección donde se describa cada requisito usando los siguientes elementos del estándar IEEE830:
+\begin{itemize}
+    \item Perspectiva del producto
+    \item Funciones del producto
+    \item Características de los usuarios
+    \item Restricciones
+    \item Requisitos funcionales (formato de casos de uso)
+    \item Requisitos no funcionales
+\end{itemize}   
+Respecto a la lista de requerimientos, el aprendiz deberá agregar una sección donde se describa cada requisito usando la estructura de historias de usuario, con los siguientes elementos por historia: 
+\begin{itemize}
+    \item Número de historia (priorizada)
+    \item Nombre de la historia
+    \item Usuario
+    \item Descripción de la historia de usuario
+    \item Observaciones
+    \item Criterios de aceptación
+\end{itemize}    
+    \end{flushleft}
+    \newpage
+    \tableofcontents
+    \newpage
+\section{Introducción}
+
+El presente documento describe los requisitos del sistema de gestión de citas médicas para la Clínica Regional de Montelíbano. Los requisitos se han elaborado utilizando el modelo IEEE830 y también el modelo de descripción de requisitos por medio de historias de usuario.
+
+\section{Alcance}
+
+El sistema de gestión de citas médicas debe permitir a los pacientes y al personal médico programar, cancelar y reprogramar citas médicas. El sistema también debe permitir al personal médico enviar recordatorios de citas a los pacientes.
+
+\section{Requisitos}
+
+\subsection{Perspectiva del producto}
+\begin{itemize}
+\item El sistema de gestión de citas médicas debe ser una herramienta útil y eficiente para los pacientes y el personal médico. 
+\item El sistema debe ser fácil de usar y debe cumplir con los requisitos de la clínica.
+\end{itemize}
+
+
+\subsection{Funciones del producto}
+El sistema de gestión de citas médicas debe permitir a los pacientes realizar las siguientes funciones:
+\begin{itemize}
+\item Registrarse en el sistema
+\item Programar citas médicas
+\item Cancelar citas médicas
+\item Reprogramar citas médicas
+\end{itemize}
+El sistema de gestión de citas médicas debe permitir al personal médico realizar las siguientes funciones:
+\begin{itemize}
+\item Enviar recordatorios de citas a los pacientes
+\item Administrar el calendario de citas
+\item Reprogramar citas médicas
+\end{itemize}
+
+Los usuarios del sistema de gestión de citas médicas son los siguientes:
+\begin{enumerate}
+\item Pacientes
+\item Personal médico
+\end{enumerate}
+El sistema de gestión de citas médicas debe cumplir con las siguientes restricciones:
+\begin{itemize}
+\item El sistema debe ser compatible con los navegadores web modernos.
+
+\item El sistema debe ser accesible para personas con discapacidad.
+
+\end{itemize}
+
+\subsection{Requisitos funcionales}
+
+Los requisitos funcionales del sistema de gestión de citas médicas se describen a continuación, utilizando el formato de casos de uso.
+
+ \textbf{Caso de uso 1: Registrar paciente} 
+
+Actor: Paciente
+
+Propósito: Registrarse en el sistema de gestión de citas médicas.
+\newpage
+Flujo principal:
+\begin{enumerate}
+\item El paciente ingresa sus datos personales en el sistema.
+\item El sistema verifica los datos ingresados.
+\item Si los datos son correctos, el sistema crea una cuenta para el paciente.
+\item El sistema muestra un mensaje de éxito.
+
+\end{enumerate}
+
+\textbf{Historia de usuario 1: } 
+Como paciente, quiero poder registrarme en el sistema para poder programar citas médicas.
+
+Prioridad: Alta
+
+Usuario: Paciente
+
+Puntos estimados de esfuerzo: 5
+
+\textbf{Descripción:} 
+
+El paciente debe poder ingresar sus datos personales, como nombre, apellido, correo electrónico, teléfono y fecha de nacimiento. El sistema debe verificar que los datos sean correctos antes de crear una cuenta para el paciente.
+
+\textbf {Observaciones:}
+
+\begin{itemize}
+    \item El paciente debe poder recibir un correo electrónico de confirmación después de registrarse.
+    \item El paciente debe poder elegir una contraseña para su cuenta.
+\end{itemize} 
+\textbf{Criterios de aceptación:}
+\begin{itemize}
+    \item El paciente debe poder ingresar sus datos personales correctamente.
+    \item El sistema debe crear una cuenta para el paciente.
+    \item El paciente debe recibir un correo electrónico de confirmación.
+\end{itemize}  
+\newpage 
+\textbf{Caso de uso 2: Programar cita} \newline \
+Actor: Paciente
+
+Propósito: Programar una cita médica.
+
+Flujo principal:
+\begin{enumerate}
+    \item El paciente selecciona un médico y una fecha y hora disponibles.
+    \item El sistema muestra un resumen de la cita programada.
+    \item El paciente confirma la cita.
+    \item El sistema registra la cita en el calendario.
+    \item El sistema muestra un mensaje de éxito.
+    \end{enumerate}
+
+    \textbf{Historia de usuario 2: }  
+    Como paciente, quiero poder programar una cita médica con el médico que elija.
+
+Prioridad: Alta
+
+Usuario: Paciente
+
+Puntos estimados de esfuerzo: 10
+
+\textbf{Descripción:} 
+
+El paciente debe poder seleccionar un médico y una fecha y hora disponibles para programar una cita. El sistema debe mostrar un resumen de la cita programada antes de que el paciente la confirme.
+
+\textbf{ Observaciones:}
+\begin{itemize}
+    \item El paciente debe poder ver la disponibilidad de los médicos en tiempo real.
+    \item El sistema debe verificar que la fecha y hora seleccionadas estén disponibles.
+\end{itemize} 
+\textbf{Criterios de aceptación:}
+\begin{itemize}
+    \item El paciente debe poder seleccionar un médico y una fecha y hora disponibles.
+    \item El sistema debe mostrar un resumen de la cita programada.
+    \item El paciente debe poder confirmar la cita.
+\end{itemize}  
+
+\textbf{Caso de uso 3: Cancelar cita} \newline \
+Actor: Paciente
+
+Propósito: Cancelar una cita médica programada.
+
+Flujo principal:
+\begin{enumerate} 
+    \item El paciente selecciona una cita programada.
+    \item El sistema muestra un mensaje de confirmación.
+    \item El paciente confirma la cancelación.
+    \item El sistema elimina la cita del calendario.
+    \item El sistema muestra un mensaje de éxito.
+    \end{enumerate}  
+
+
+
+\textbf{Historia de usuario 3:}  
+Como paciente, quiero poder cancelar una cita médica que ya he programado.
+
+Prioridad: Alta
+
+Usuario: Paciente
+
+Puntos estimados de esfuerzo: 5
+
+\textbf{Descripción:} 
+
+El paciente debe poder seleccionar una cita programada para cancelarla. El sistema debe mostrar un mensaje de confirmación antes de que el paciente confirme la cancelación.
+
+\textbf{Observaciones:} 
+\begin{itemize}
+    \item El paciente debe poder cancelar la cita sin penalización.
+\end{itemize}  
+
+\textbf{Criterios de aceptación:} 
+\begin{itemize}
+    \item El paciente debe poder seleccionar una cita programada.
+    \item El sistema debe mostrar un mensaje de confirmación.
+    \item El paciente debe poder confirmar la cancelación.
+    \item El sistema debe eliminar la cita del calendario.
+\end{itemize}  
+
+\textbf{Caso de uso 4: Reprogramar cita} 
+
+Actor: Paciente
+
+Propósito: Reprogramar una cita médica programada.
+
+Flujo principal:
+\begin{enumerate} 
+    \item El paciente selecciona una cita programada.
+    \item El sistema muestra un calendario con las fechas y horas disponibles.
+    \item El paciente selecciona una nueva fecha y hora.
+    \item El sistema muestra un resumen de la cita reprogramada.
+    \item El paciente confirma la reprogramación.
+    \item El sistema actualiza la cita en el calendario.
+    \item El sistema muestra un mensaje de éxito.
+    \end{enumerate}  
+
+\textbf{Historia de usuario 4:}  
+Como paciente, quiero poder reprogramar una cita médica que ya he programado.
+
+Prioridad: Alta
+
+Usuario: Paciente
+
+Puntos estimados de esfuerzo: 10
+
+\textbf{Descripción:} 
+
+El paciente debe poder seleccionar una cita programada para reprogramarla. El sistema debe mostrar un calendario con las fechas y horas disponibles antes de que el paciente confirme la reprogramación.
+
+\textbf{Observaciones:} 
+
+El paciente debe poder reprogramar la cita sin penalización.
+
+\textbf{Criterios de aceptación:} 
+
+El paciente debe poder seleccionar una cita programada.
+El sistema debe mostrar un calendario con las fechas y horas disponibles.
+El paciente debe poder seleccionar una nueva fecha y hora.
+El sistema debe mostrar un resumen de la cita reprogramada.
+El paciente debe poder confirmar la reprogramación.
+El sistema debe actualizar la cita en el calendario.
+
+\subsection{Requisitos no funcionales}
+\textbf{Usabilidad:}
+El sistema debe ser fácil de usar para pacientes y personal médico.
+El sistema debe proporcionar una interfaz de usuario intuitiva.
+\newline \textbf{Rendimiento:}
+El sistema debe ser capaz de soportar un número elevado de usuarios simultáneos.
+El sistema debe proporcionar un tiempo de respuesta rápido.
+\newline \textbf{Disponibilidad:}
+El sistema debe estar disponible 24/7.
+\newline \textbf{Seguridad:}
+El sistema debe proteger la privacidad de los datos de los pacientes.
+\newline \textbf{Accesibilidad:}
+El sistema debe ser accesible para personas con discapacidad.
+
+
+\textbf{Observaciones:}
+
+Los requisitos no funcionales se han clasificado según el estándar IEEE830.
+Los requisitos no funcionales se han establecido de acuerdo con las necesidades de la Clínica Regional de Montelíbano.
+\section{Conclusiones}
+
+La elaboracion de historias de usuario es un documento valioso que ayudará a garantizar que el sistema de gestión de citas médicas sea efectivo y cumpla con las necesidades de la clínica sin dejar esacapar detalles.
+%Encyclopædia Britannica. (n.d.). Computer programmers discuss software development. [Photograph]. Britannica ImageQuest. Retrieved October 19, 2023, from https://quest-eb-com.bdigital.sena.edu.co/images/132_1584681
+%\bibliographystyle{apacite}
+%\nocite{*}
+%\bibliography{referenciados}
+
+\end{document}

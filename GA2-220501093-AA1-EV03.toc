@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{4}{}%
+\contentsline {section}{\numberline {2}Alcance}{4}{}%
+\contentsline {section}{\numberline {3}Requisitos}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Perspectiva del producto}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Funciones del producto}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Requisitos funcionales}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Requisitos no funcionales}{10}{}%
+\contentsline {section}{\numberline {4}Conclusiones}{10}{}%
